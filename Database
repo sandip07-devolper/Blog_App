@@ -1,0 +1,51 @@
+CREATE DATABASE BlogApp;
+GO
+
+-- Categories Table
+CREATE TABLE Categories (
+    CategoryID INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(255)
+);
+
+-- Blog Posts Table
+CREATE TABLE BlogPosts (
+    PostID INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(255) NOT NULL,
+    Content TEXT NOT NULL,
+    Author NVARCHAR(100) NOT NULL,
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE(),
+    UpdatedDate DATETIME,
+    CategoryID INT,
+    IsPublished BIT NOT NULL DEFAULT 0,
+    FOREIGN KEY (CategoryID) REFERENCES Categories(CategoryID)
+);
+
+-- Comments Table
+CREATE TABLE Comments (
+    CommentID INT IDENTITY(1,1) PRIMARY KEY,
+    PostID INT NOT NULL,
+    Author NVARCHAR(100) NOT NULL,
+    Content NVARCHAR(MAX) NOT NULL,
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE(),
+    FOREIGN KEY (PostID) REFERENCES BlogPosts(PostID) ON DELETE CASCADE
+);
+
+-- Users Table (for future authentication system)
+CREATE TABLE Users (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(100) NOT NULL UNIQUE,
+    Email NVARCHAR(100) NOT NULL UNIQUE,
+    PasswordHash NVARCHAR(255) NOT NULL,
+    CreatedDate DATETIME NOT NULL DEFAULT GETDATE()
+);
+
+-- Post Revisions Table (for edit history)
+CREATE TABLE PostRevisions (
+    RevisionID INT IDENTITY(1,1) PRIMARY KEY,
+    PostID INT NOT NULL,
+    Title NVARCHAR(255),
+    Content TEXT,
+    EditedDate DATETIME NOT NULL DEFAULT GETDATE(),
+    FOREIGN KEY (PostID) REFERENCES BlogPosts(PostID) ON DELETE CASCADE
+);
