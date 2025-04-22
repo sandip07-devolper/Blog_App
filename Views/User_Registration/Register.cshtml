@@ -9,37 +9,40 @@
 @Html.Partial("~/Views/Shared/PartialSidebar.cshtml")
 
 <h2>Register</h2>
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    <div>
-        <label>User Name</label>
-        @Html.TextBoxFor(m => m.Username)
-        @Html.ValidationMessageFor(m => m.Username)
-    </div>
-    <div>
-        <label>Email</label>
-        @Html.TextBoxFor(m => m.Email)
-        @Html.ValidationMessageFor(m => m.Email)
-    </div>
-    @*<div>
-            <label>Password</label>
-            @Html.PasswordFor(m => m.Password)
-            @Html.ValidationMessageFor(m => m.Password)
+<div id="content-wrapper" class="d-flex flex-column">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            <label>User Name</label>
+            @Html.TextBoxFor(m => m.Username)
+            @Html.ValidationMessageFor(m => m.Username)
         </div>
         <div>
-            <label>Confirm Password</label>
-            @Html.PasswordFor(m => m.ConfirmPassword)
-            @Html.ValidationMessageFor(m => m.ConfirmPassword)
-        </div>*@
-    <button type="submit">Register</button>
-}
+            <label>Email</label>
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        @*<div>
+                <label>Password</label>
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div>
+                <label>Confirm Password</label>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </div>*@
+        <button type="submit">Register</button>
+    }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
 </div>
+
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
