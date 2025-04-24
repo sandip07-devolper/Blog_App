@@ -6,20 +6,10 @@ using System.Web.Mvc;
 
 namespace BlogApp.Controllers
 {
-    public class BlogController : Controller
+    public class AuthorProfileController : Controller
     {
-        // GET: Blog
+        // GET: AuthorProfile
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        public ActionResult Edit()
         {
             return View();
         }

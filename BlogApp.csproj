@@ -128,6 +128,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Area\Accounts\LoginController.cs" />
     <Compile Include="Area\Accounts\User_RegistrationController.cs" />
+    <Compile Include="Controllers\AuthorProfileController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2117,6 +2118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AuthorProfile\" />
     <Folder Include="Views\Blog\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
