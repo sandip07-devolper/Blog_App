@@ -14,7 +14,7 @@ namespace BlogApp.Controllers
             return View();
         }
 
-        public ActionResult Index()
+        public ActionResult Create()
         {
             return View();
         }
