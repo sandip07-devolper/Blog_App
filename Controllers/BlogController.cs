@@ -23,14 +23,14 @@ namespace BlogApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(BlogController blog)
+        public ActionResult Create(BlogController blogController)
         {
 
             try
             {
                 int maxid = db.BlogPosts.Count() >  0 ? db.BlogPosts.Max(a => a.PostID)+ 1:1;
-                blog.postid = maxid;
-                db.BlogPosts.Add(blog);
+                blogController.postid = maxid;
+                db.BlogPosts.Add(blogController);
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -40,7 +40,7 @@ namespace BlogApp.Controllers
 
                 throw;
             }
-            return View();
+            return View(blogController);
         }
 
         public ActionResult Edit()

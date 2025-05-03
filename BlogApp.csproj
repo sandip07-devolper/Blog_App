@@ -204,7 +204,7 @@
     <Compile Include="Area\Accounts\LoginController.cs" />
     <Compile Include="Area\Accounts\User_RegistrationController.cs" />
     <Compile Include="Controllers\AuthorProfileController.cs" />
-    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\BlogPostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -264,8 +264,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Models\BlogApp.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BlogApp.Context.cs</LastGenOutput>
       <DependentUpon>BlogApp.edmx</DependentUpon>
+      <LastGenOutput>BlogApp.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\BlogApp.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -2197,6 +2197,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AuthorProfile\" />
+    <Folder Include="Views\BlogPost\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
