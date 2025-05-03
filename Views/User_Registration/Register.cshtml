@@ -8,14 +8,40 @@
 
 @*@Html.Partial("~/Views/Shared/PartialSidebar.cshtml")*@
 
+<style>
+    .topbar {
+        margin-bottom: -0.5rem !important;
+        height: 2.8rem !important;
+        background-color: #4e73df !important;
+    }
+
+    .box-header {
+        background-color: #4e73df; /* Replace with your preferred color */
+        padding: 10px;
+        
+    }
+
+
+ 
+
+
+
+</style>
+
+
+
+
 <div id="content-wrapper" class="d-flex flex-column">
 
     <div id="content">
         <div class="box box-solid box-info">
-            <div class="box-header">
-                <h3 class="box-title">Create </h3>
+
+            <div class="box-header " >
+                <h4 class="box-title" style="color: white; margin: 0;">Create</h4>
             </div>
-            <div class="box-body" id="spinner">
+
+
+            <div class="box-body bg-white " id="spinner">
                 <div class="row">
                     <div class="col-md-12">
 
@@ -25,8 +51,7 @@
 
 
                             <div class="form-horizontal">
-                                <h4>Responsibility</h4>
-                                <hr />
+
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                                 <div class="form-group">
@@ -67,4 +92,4 @@
 
 
 
-    
+
