@@ -1,0 +1,12 @@
+﻿body {
+}
+.topbar {
+    margin-bottom: -0.5rem !important;
+    height: 2.8rem !important;
+    background-color: #4e73df !important;
+}
+
+.box-header {
+    background-color: #4e73df; /* Replace with your preferred color */
+    padding: 10px;
+}
